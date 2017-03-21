@@ -50,8 +50,10 @@
 
 ;; 2c
 (define (charactersPerSentence lst)
-  (+ (sumList(charactersPerWord (car lst))) (charactersPerSentence (cdr lst))))
+  (map (+ ((sumList(charactersPerWord (car lst))) (charactersPerSentence (cdr lst))))))
 
 ;; 2d
+;(define (wordsPerSentence lst))
 
 ;; 2e
+;(define (statsDocument lst))
