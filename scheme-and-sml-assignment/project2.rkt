@@ -50,7 +50,7 @@
 
 ;; 2c
 (define (charactersPerSentence lst)
-  (map (+ ((sumList(charactersPerWord (car lst))) (charactersPerSentence (cdr lst))))))
+  (map sumList (map charactersPerWord lst)))
 
 ;; 2d
 (define (wordsPerSentence lst)
@@ -59,3 +59,7 @@
 
 ;; 2e
 ;(define (statsDocument lst))
+
+;; lists for testing
+(define testList '((Hello Mary) (Scheme is so wonderful) (See you later)
+(John)))
