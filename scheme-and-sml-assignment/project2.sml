@@ -1,13 +1,4 @@
 (* 3a *)
-(*fun zip(x::xt)(y::yt) =
-	let
-       val (M,N) = zip(xt)(yt)
-	in
-       (x::M, y::N)
-	end;
- 
- fun zip(x::xt)(y::yt) = [(x,y)];*)
-
 fun zip([]) ([]) = []
 | zip(a::x) ([]) = []
 | zip([]) (b::y) = []
