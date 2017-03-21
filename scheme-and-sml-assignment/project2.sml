@@ -11,8 +11,8 @@ fun greaterThan ([]) (k) = []
     else x::greaterThan(xt)(k);
 
 (* 3c *)
-fun reduction (f) ([]) = []
-| reduction (f) (a::y) = a (f y);
+fun reduction f ([]) = []
+| reduction f (a::y) = f(a, reduction f(y));
 
 (* 3d *)
 
