@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname |project 2|) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname project2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; 1a
 (define (maxElement lst)
   (apply max (car lst) (cdr lst)))
@@ -25,6 +25,25 @@
 (define (maxofmax lst)
   (maxElement(map maxElement lst)))
 
+;; 1e
+(define (firsthalf lst loc)
+  (cond ((eq? loc 0) '())
+      (else (cons (car lst) (firsthalf (cdr lst) (- loc 1))))
+      )
+  )
+(define (secondhalf lst loc)
+  (cond ((null? lst) '())
+        ((eq? loc 0) (list lst))
+        (else (secondhalf (cdr lst) (- loc 1)))
+        )
+  )
+(define (split lst loc)
+  (cond ((null? lst) '())
+        ((eq? loc 0) lst)
+        (else (cons (firsthalf lst loc)(secondhalf lst loc)))
+        )
+  )
+  
 ;; 2a
 (define (sumList lst)
   (if (null? lst)
@@ -39,3 +58,7 @@
 ;; 2c
 (define (charactersPerSentence lst)
   (+ (sumList(charactersPerWord (car lst))) (charactersPerSentence (cdr lst))))
+
+;; 2d
+
+;; 2e
