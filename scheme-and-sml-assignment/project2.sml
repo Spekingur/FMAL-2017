@@ -17,6 +17,10 @@ fun reduction (f) ([]) = []
 (* 3d *)
 
 (* 4a *)
+fun insert(x, ([])) = []
+|	insert(x:real, (a::b::y)) =
+	 if(x <= b ) then x::(a::b::y)
+	 else a::b::insert(x, y);
 
 (* 4b *)
 
