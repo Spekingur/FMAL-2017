@@ -18,9 +18,9 @@ fun reduction (f) ([]) = []
 
 (* 4a *)
 fun insert(x, ([])) = []
-|	insert(x:real, (a::b::y)) =
-	 if(x <= b ) then x::(a::b::y)
-	 else a::b::insert(x, y);
+|	insert(x:real, (a::y)) =
+	 if(x > a) then a::insert(x, y)
+	 else x::(a::y);
 
 (* 4b *)
 
