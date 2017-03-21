@@ -58,8 +58,11 @@
   )
 
 ;; 2e
-;(define (statsDocument lst))
+(define (statsDocument lst)
+  (list (sumList(charactersPerSentence lst)) (sumList(wordsPerSentence lst)) (length lst))
+  )
 
 ;; lists for testing
 (define testList '((Hello Mary) (Scheme is so wonderful) (See you later)
 (John)))
+(define testList2 '(()()()()()()))
