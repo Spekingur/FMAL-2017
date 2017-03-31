@@ -31,11 +31,11 @@ mymerge([HX|X], [HY|Y], [HX,HY|Z]) :- !, mymerge(X, Y, Z).
 /* 3c mysort(L1,L2) */
 /* 4a binaryTree(T) */
 binaryTree(nil).
-binaryTree(T(X,LeftT,RightT)):- binaryTree(LeftT), binaryTree(RightT).
+binaryTree(t(_,LeftT,RightT)) :- binaryTree(LeftT), binaryTree(RightT).
 /* 4b preorder(T, Lis) */
 preorder(nil,[]).
-preorder(T(X,LeftT,RightT),[X|Lis]):-    preorder(LeftT,LeftLis),   										
+preorder(t(X,LeftT,RightT),[X|Lis]):-    preorder(LeftT,LeftLis),   										
 					 preorder(RightT,RightLis),   
-                                         append(LeftLis,RightLis,Lis).
+					 append(LeftLis,RightLis,Lis).
 /* 4c leaves(T, Lis) */
 /* 5 */
