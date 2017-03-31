@@ -24,6 +24,8 @@ removeElement(X,[X],[]).
 insertElementAt(X,[ ],1,[X]).
 /* 2d segment(X,Y) */
 /* 2e addUpList(L1,L2) */
+addUpList([],[]).
+addUpList([X],[X]).
 /* 3a mymerge(X,Y,Z) */
 mymerge([], [], []).
 mymerge(X, [], X).
