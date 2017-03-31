@@ -1,6 +1,7 @@
-insertElementAt(X,[ ],1,[X|_]).
-insertElementAt(X,L1,K,[X|L2]) :- K>1, K1 is K-1, insertElementAt(X,L1,K1,L2).
-insertElementAt(X,[H|L1],K,[H|L2]) :- insertElementAt(X,L1,K,L2).
+insertElementAt(X,[ ],1,[X]).
+/*insertElementAt(X,_,1,[X|_]).*/
+/*insertElementAt(X,L1,K,[X|L2]) :- K>1, K1 is K-1, insertElementAt(X,L1,K1,L2).
+insertElementAt(X,[H|L1],K,[H|L2]) :- insertElementAt(X,L1,K,L2).*/
 /*insertElementAt(X,[H|L1],N,[H|L2]) :- insertElementAt(X,L1,N1,L2), N is N1-1, N1>1.*/
 
 /*insertElement(X,L,[X|L]).
