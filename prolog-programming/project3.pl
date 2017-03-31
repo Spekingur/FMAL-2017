@@ -17,7 +17,7 @@ married(john,mary).
 primarysuspect(X) :- hatred(_,X), greed(X).
 /* 2a numElements(K,L) */
 numElements(0,[]).
-numElements(M,[_|L]) :- numElement(K,L), M is K+1.
+numElements(M,[_|L]) :- numElements(K,L), M is K+1.
 /* 2b removeElement(X,L1,L2) */
 /* 2c insertElementAt(elem,L1,pos,L2) */
 /* 2d segment(X,Y) */
