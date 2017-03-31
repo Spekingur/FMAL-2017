@@ -11,39 +11,17 @@ fun greaterThan ([]) (k) = []
     else x::greaterThan(xt)(k);
 
 (* 3c *)
-fun reduction f ([]) = []
-| reduction f (a::y) = if (a = y) then a else f (a, reduction (f) (y));
-
-(*if a = y then a::y
-                         else reduction (f) (y);
-
-fun reduction f (a) = a
-| reduction f (a::y) = f(a, reduction f(y));
-
-fun reduction f ([]) = nil
-| reduction f (a::y) = f(a, reduction f(y));
-
-fun reduction f (a::y) =
-    if(a+1=nil) then a else f(a, reduction f(y));
-|
-
-fun reduction f (a::y) =
-    if()
-
-fun reduction f ([]) = 0
+fun reduction f ([]) = 0.0
 | reduction f ([a]) = a
 | reduction f (a::y) = f(a, reduction f(y));
 
-fun reduction f ([]) = []
-| reduction f (a::y) =
-    if (length a = 1)
-    then a
-    else f(a, reduction f(y));
-
-fun reduction f lis
+fun reduction f (x) =
+    if null(x) then 0
+    else if null(tl(x)) then hd(x)
+    else f(hd(x), reduction f(tl(x)));
 
 (* 3d *)
-fun partition f ([]) = []
+(*fun partition f ([]) = []
 | partition f (lis::y) = 
     let
         val lis1
@@ -52,8 +30,8 @@ fun partition f ([]) = []
         (lis1, lis2)
     end
 
-fun test [] = []
-| test (a::y) = y;
+fun test2 [] = []
+| test2 (a::y) = [a];*)
 
 (*if (f lis) then let lis1 = lis 
 else let lis2 = lis;
