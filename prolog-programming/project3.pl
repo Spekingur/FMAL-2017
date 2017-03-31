@@ -35,7 +35,7 @@ binaryTree(T(X,LeftT,RightT)):- binaryTree(LeftT), binaryTree(RightT).
 /* 4b preorder(T, Lis) */
 preorder(nil,[]).
 preorder(T(X,LeftT,RightT),[X|Lis]):-    preorder(LeftT,LeftLis),   										
-										                     preorder(RightT,RightLis),   
+					 preorder(RightT,RightLis),   
                                          append(LeftLis,RightLis,Lis).
 /* 4c leaves(T, Lis) */
 /* 5 */
