@@ -23,9 +23,19 @@ numElements(M,[_|L]) :- numElements(K,L), M is K+1.
 /* 2d segment(X,Y) */
 /* 2e addUpList(L1,L2) */
 /* 3a mymerge(X,Y,Z) */
+mymerge([], [], []).
+mymerge(X, [], X).
+mymerge([], X, X).
+mymerge([HX|X], [HY|Y], [HX,HY|Z]) :- !, mymerge(X, Y, Z).
 /* 3b mysplit(L1,L2,L3) */
 /* 3c mysort(L1,L2) */
 /* 4a binaryTree(T) */
+binaryTree(nil).
+binaryTree(T(X,LeftT,RightT)):- binaryTree(LeftT), binaryTree(RightT).
 /* 4b preorder(T, Lis) */
+preorder(nil,[]).
+preorder(T(X,LeftT,RightT),[X|Lis]):-    preorder(LeftT,LeftLis),   										
+										                     preorder(RightT,RightLis),   
+                                         append(LeftLis,RightLis,Lis).
 /* 4c leaves(T, Lis) */
 /* 5 */
