@@ -28,7 +28,8 @@ insertElementAt(X,[ ],1,[X]).
 mymerge([], [], []).
 mymerge(X, [], X).
 mymerge([], X, X).
-mymerge([HX|X], [HY|Y], [HX,HY|Z]) :- !, mymerge(X, Y, Z).
+mymerge([HX|X], [HY|Y], [HX|Z]):- HX < HY, mymerge(X, [HY|Y], Z).
+mymerge([HX|X], [HY|Y], [HY|Z]) :- HX >= HY, mymerge([HX|X], Y, Z).
 /* 3b mysplit(L1,L2,L3) */
 /* 3c mysort(L1,L2) */
 /* 4a binaryTree(T) */
