@@ -21,6 +21,7 @@ numElements(M,[_|L]) :- numElements(K,L), M is K+1.
 /* 2b removeElement(X,L1,L2) */
 removeElement(X,[X],[]).
 /* 2c insertElementAt(elem,L1,pos,L2) */
+insertElementAt(X,[ ],1,[X]).
 /* 2d segment(X,Y) */
 /* 2e addUpList(L1,L2) */
 /* 3a mymerge(X,Y,Z) */
