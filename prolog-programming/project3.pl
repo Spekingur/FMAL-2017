@@ -20,6 +20,8 @@ numElements(0,[]).
 numElements(M,[_|L]) :- numElements(K,L), M is K+1.
 /* 2b removeElement(X,L1,L2) */
 removeElement(X,[X],[]).
+removeElement(X,[X|L1],L1).
+removeElement(X,[Y|L1],[Y|L2]):- removeElement(X,L1,L2).
 /* 2c insertElementAt(elem,L1,pos,L2) */
 insertElementAt(X,[ ],1,[X]).
 /* 2d segment(X,Y) */
